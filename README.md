@@ -1,26 +1,15 @@
 # Estimate-Trending-Duration-of-YouTube-Videos
 Built a multivariate linear regression model to predict trending duration of a video on YouTube based on feature engineering, A/B testing and sentiment score generated from user comments (https://www.youtube.com/watch?v=oPr8Sx9L9Mg)
 
-YouTube trending video analysis
+Executive Summary
+The content explosion in the media industry, and online space, in the past few years has attracted a huge number of investors. These days, investors and advertisers often sponsor channels and blogs. For instance, in social advertising, YouTube ads convert more customers than any other medium. There are two popular ways in which advertisements are shown: 
+1. Targeting in-market audience based on browsing history
+2. Product placement, where you place your products’ ads based on trending blogs and videos
+The latter is widely being used on platforms like YouTube, with the rise of channel sponsoring, where ads are shown on particular videos or channels.	
+Therefore, we have analyzed YouTube trending videos from 2017-2018 to derive insights and build a model which can predict how long a video will trend, considering variables such as likes, comments, dislikes, sentiment scores of comments, and video category. This can help us devise a marketing strategy to place our product ads on recommended trending videos.
 
-Pre-requisites
-1. Download UScomments.csv file
-2. Install wordcloud, nltk and vaderSentiment libraries in python
+Exploratory Data Analysis and Modelling
+We built a regression model based on the YouTube data of day1 of trending videos which can predict how long a video can trend considering factors such as like to view ratio, dislike to view ratio, comment to view ratio, video category, sentiment score and number of views as our input variable. Before fitting the model, we did exploratory data analysis which showed that most of our input variables were right skewed. Hence, we preprocessed the data using logarithmic transformation, capping and flooring outlier treatment, and standardization to account for skewness in our data.  Initial analysis showed that if other parameters are constant, the median of trending duration is higher for Film & Animation, Music, People & Blogs, Comedy and Entertainment as compared to other video categories. We calculated sentiment score for each video - average of sentiment score of all comments for that video. Since the number of likes, and dislikes can be misleading as an input variable, we did feature engineering to convert these variables with respect to number of views as base. We generated dummy variables for categorical variable - video category, keeping Film & Animation as base.
+Conclusions and Recommendations
+Film and Animation category videos are likely to trend for the longest duration as compared to other video categories, provided other parameters are kept constant. Hence, we recommend potential advertisers/channel sponsors to place their product ads on Film and Animation category videos. Moreover, advertisers should invest in videos having comments with more negative sentiments to reach out to a larger audience. Based on the raw data, we can easily find the top ten trending channels from Film and Animation category videos where advertisers can invest. Our model can be improved further using more predictor variables and advanced machine learning techniques. 
 
-Steps to estimate the sentiment score for each video
-1. Change the path of csv file to the exact path of UScomments.csv file
-2. Run the Web_Data_Text_Analytics.ipynb file in Jupyter notebook or any other IDE.  
-3. Provide the name and path where you want to store your final sentiments score file.
-4. Average the sentiment scores for each video in the newly generated csv file.
-5. Use excel Vlookup to add the sentiment score of each video in a new column called sentiment_score in USvideos.csv file. 
-
-Regression Analysis
-1. Calculated trending duration for each video
-2. Subsetted day1 data of each video
-3. Created new variables – like to view ratio, dislike to view ratio, comment to view ratio
-3. Exploratory Data Analysis of predictor variables
-4. Logarithmic transformation of skewed variables  
-5. Capping and Flooring of outliers
-6. Standardized input variables
-7. Generated regression model through Minitab
-8. Inference from the results
