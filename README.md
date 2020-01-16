@@ -1,7 +1,7 @@
 # Estimate-Trending-Duration-of-YouTube-Videos
 Built a multivariate linear regression model to predict trending duration of a video on YouTube based on feature engineering, A/B testing and sentiment score generated from user comments (https://www.youtube.com/watch?v=oPr8Sx9L9Mg)
 
-Executive Summary
+                                                        Executive Summary
 The content explosion in the media industry, and online space, in the past few years has attracted a huge number of investors. These days, investors and advertisers often sponsor channels and blogs. For instance, in social advertising, YouTube ads convert more customers than any other medium. There are two popular ways in which advertisements are shown: 
 1. Targeting in-market audience based on browsing history
 2. Product placement, where you place your products’ ads based on trending blogs and videos
